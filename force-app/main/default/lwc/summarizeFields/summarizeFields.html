@@ -1,10 +1,17 @@
 <template>
-    <lightning-card title="Text Analyzer">
-        <lightning-button-group slot="actions">
-            <lightning-button label="Show Data" onclick={showData}></lightning-button>
-            <lightning-button label="Run" onclick={run}></lightning-button>
-        </lightning-button-group>
-        <p class="slds-p-horizontal_small">{output}</p>
+    <div class="slds-grid slds-wrap expand-container">
+        <div class="slds-size_1-of-1 expand-container">
+            <lightning-card title="Text Analyzer"> <!-- style="display: grid; height: 100%; width: 100%"> -->
+                <lightning-button-group slot="actions">
+                    <lightning-button label="Show Data" onclick={showData}></lightning-button>
+                    <lightning-button label="Run" onclick={run}></lightning-button>
+                </lightning-button-group>
+                <lightning-spinner lwc:if={spinner} alternative-text="Loading" size="medium"></lightning-spinner>
+                <div class="slds-p-around_medium slds-scrollable_y" tabindex="0">                    
+                    <p>{output}</p>
+                </div>
+            </lightning-card>
+            </div>
+        </div>
         <!--<p class="slds-p-horizontal_small">{stringResults}</p>-->
-    </lightning-card>
 </template>
