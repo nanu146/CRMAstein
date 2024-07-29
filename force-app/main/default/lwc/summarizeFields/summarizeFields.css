@@ -1,6 +1,9 @@
 .expand-container {
-    position: relative;
+    display: flex;
+    flex-direction: column;
     height: 100%;
-    width: 100%;
-  }
-  
+}
+.content-container {
+    flex-grow: 1;
+    overflow-y: auto;
+}

@@ -7,11 +7,12 @@
                     <lightning-button label="Run" onclick={run}></lightning-button>
                 </lightning-button-group>
                 <lightning-spinner lwc:if={spinner} alternative-text="Loading" size="medium"></lightning-spinner>
-                <div class="slds-p-around_medium slds-scrollable_y" tabindex="0">                    
+                <div class="content-container slds-p-around_medium slds-scrollable_y" tabindex="0">                    
                     <p>{output}</p>
                 </div>
             </lightning-card>
-            </div>
         </div>
-        <!--<p class="slds-p-horizontal_small">{stringResults}</p>-->
+    </div>
+    <!--<p class="slds-p-horizontal_small">{stringResults}</p>-->
 </template>
+
