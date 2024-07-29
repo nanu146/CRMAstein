@@ -1,0 +1,10 @@
+<template>
+    <lightning-card title="Text Analyzer">
+        <lightning-button-group slot="actions">
+            <lightning-button label="Show Data" onclick={showData}></lightning-button>
+            <lightning-button label="Run" onclick={run}></lightning-button>
+        </lightning-button-group>
+        <p class="slds-p-horizontal_small">{output}</p>
+        <!--<p class="slds-p-horizontal_small">{stringResults}</p>-->
+    </lightning-card>
+</template>
