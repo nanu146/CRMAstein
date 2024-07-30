@@ -1,0 +1,37 @@
+<template>    
+    <div class="slds-grid slds-wrap expand-container">
+        <div class="slds-col slds-size_1-of-1">
+            <div class="slds-clearfix">
+                <div class="slds-float_right slds-p-around_medium">
+                    <lightning-button-group slot="actions">
+                        <lightning-button label="Show Data" onclick={showData}></lightning-button>
+                        <lightning-button label="Show Prompt" onclick={showPrompt}></lightning-button>
+                        <lightning-button label="Run" onclick={run}></lightning-button>
+                    </lightning-button-group>
+                </div>
+                <h1 class="slds-text-heading_large slds-p-around_medium">
+                    {title}
+                    <template lwc:if={selection_changed}>
+                        <span style="position:relative; top: -7px;" class="slds-badge slds-theme_warning slds-m-left_large slds-text-body_regular" role="alert">
+                            <lightning-icon size="xx-small" icon-name="utility:warning" alternative-text="Warning"></lightning-icon>
+                            Selection has changed since last analysis.
+                        </span>
+                    </template>
+                </h1>
+            </div>
+        </div>
+        <div class="slds-col slds-size_1-of-3 remaining-container">
+            <lightning-textarea class="prompt" name="prompt" label="Your question" value={prompt}></lightning-textarea>
+        </div>
+        <div class="slds-col slds-size_2-of-3 remaining-container">
+            <lightning-spinner lwc:if={spinner} alternative-text="Loading" size="medium"></lightning-spinner>
+            <div class="slds-p-left_medium slds-p-right_medium slds-scrollable_y" tabindex="0">                    
+                <template for:each={outputParagraphs} for:item="paragraph">
+                    <p key={paragraph} class="slds-p-bottom_small">{paragraph}</p>
+                </template>
+                <p lwc:if={error} class="slds-text-color_error">{error}</p>         
+            </div>
+        </div>
+    </div>        
+</template>
+

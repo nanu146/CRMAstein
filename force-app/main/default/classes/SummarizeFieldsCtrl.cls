@@ -16,7 +16,7 @@ public with sharing class SummarizeFieldsCtrl {
 
         // 0hfWz000000EkarIAC
         ConnectApi.EinsteinPromptTemplateGenerationsRepresentation generationsOutput = 
-            ConnectApi.EinsteinLLM.generateMessagesForPromptTemplate('Summarize_Comments', promptGenerationsInput); 
+            ConnectApi.EinsteinLLM.generateMessagesForPromptTemplate(promptTemplate, promptGenerationsInput); 
       
         System.debug(generationsOutput);
 

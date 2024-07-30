@@ -1,0 +1,14 @@
+.expand-container {
+    position: relative;
+    height: 100%;
+    width: 100%;
+  }
+
+.remaining-container {
+    height: calc(100% - 80px);
+}
+
+.prompt {
+    height: 100%;
+    --sds-c-textarea-sizing-min-height: 200px;
+}
