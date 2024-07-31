@@ -1,0 +1,28 @@
+.header {
+    background-color: #f4f4f4;
+    padding: 10px;
+}
+
+.content {
+    position: absolute;
+    top: calc(10px + 1em + 1em + 10px); /* Adjust based on the header height */
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+}
+
+.left-column,
+.right-column {
+    padding: 10px;
+    overflow-y: auto;
+}
+
+.left-column {
+    background-color: #e2e2e2;
+}
+
+.right-column {
+    background-color: #d2d2d2;
+}
