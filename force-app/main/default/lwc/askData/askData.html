@@ -1,54 +1,36 @@
 <template>    
-    <div class="slds-grid slds-wrap" lwc:ref="main" style="height: 100%; width: 100%;">
-        <div class="slds-col slds-size_1-of-1">
-            <h1 class="slds-text-heading_large slds-p-around_medium">This is my heading</h1>
+    <div class="slds-grid slds-wrap slds-grid_vertical-align-start" lwc:ref="main" style="height: 100%; width: 100%;">
+        <div class="slds-col slds-size_1-of-1" lwc:ref="heading">
+            <div class="slds-clearfix">
+                <div class="slds-float_right slds-p-around_medium">
+                    <lightning-button-group slot="actions">
+                        <lightning-button label="Show Data" onclick={showData}></lightning-button>
+                        <lightning-button label="Show Prompt" onclick={showPrompt}></lightning-button>
+                        <lightning-button label="Run" onclick={run}></lightning-button>
+                    </lightning-button-group>
+                </div>       
+                <h1 class="slds-text-heading_large slds-p-around_medium">
+                    {heading}
+                    <template lwc:if={selectionChanged}>
+                        <span style="position:relative; top: -7px;" class="slds-badge slds-theme_warning slds-m-left_large slds-text-body_regular" role="alert">
+                            <lightning-icon size="xx-small" icon-name="utility:warning" alternative-text="Warning"></lightning-icon>
+                            Selection has changed since last analysis.
+                        </span>
+                    </template>            
+                </h1>
+            </div>
         </div>
-        <div class="slds-col slds-size_1-of-1 slds-large-size_4-of-12">
-            <p>{prompt}</p>
-            <p>{mainWidth}</p>
-            <p>{mainHeight}</p>
+        <div style={promptStyle} class={promptClasses}>
+            <lightning-textarea style={textareaStyle} class="prompt" name="prompt" label="Your question" value={prompt} onchange={textareaChange}></lightning-textarea>
         </div>
-        <div class="slds-col slds-size_1-of-1 slds-large-size_8-of-12 slds-grow-none">
-            <template for:each={outputParagraphs} for:item="paragraph">
-                <p key={paragraph} class="slds-p-bottom_small">{paragraph}</p>
-            </template>            
-        </div>
-    </div>  
-      
-<!--
-    <div class="header">
-        <h1>This is the heading</h1>
-    </div>
-    <div class="content">
-        <div class="left-column">
-            <p>Left column content. This content can be longer and will be scrollable.</p>
-        </div>
-        <div class="right-column">
-            <p>Right column content. This content can also be longer and will be scrollable.</p>
-            <p>Right column content. This content can also be longer and will be scrollable.</p>
-            <p>Right column content. This content can also be longer and will be scrollable.</p>
-            <p>Right column content. This content can also be longer and will be scrollable.</p>
-            <p>Right column content. This content can also be longer and will be scrollable.</p>
-            <p>Right column content. This content can also be longer and will be scrollable.</p>
-            <p>Right column content. This content can also be longer and will be scrollable.</p>
-            <p>Right column content. This content can also be longer and will be scrollable.</p>
-            <p>Right column content. This content can also be longer and will be scrollable.</p>
-            <p>Right column content. This content can also be longer and will be scrollable.</p>
-            <p>Right column content. This content can also be longer and will be scrollable.</p>
-            <p>Right column content. This content can also be longer and will be scrollable.</p>
-            <p>Right column content. This content can also be longer and will be scrollable.</p>
-            <p>Right column content. This content can also be longer and will be scrollable.</p>
-            <p>Right column content. This content can also be longer and will be scrollable.</p>
-            <p>Right column content. This content can also be longer and will be scrollable.</p>
-            <p>Right column content. This content can also be longer and will be scrollable.</p>
-            <p>Right column content. This content can also be longer and will be scrollable.</p>
-            <p>Right column content. This content can also be longer and will be scrollable.</p>
-            <p>Right column content. This content can also be longer and will be scrollable.</p>
-            <p>Right column content. This content can also be longer and will be scrollable.</p>
-            <p>Right column content. This content can also be longer and will be scrollable.</p>
-            <p>Right column content. This content can also be longer and will be scrollable.</p>
-            <p>Right column content. This content can also be longer and will be scrollable.</p>
+        <div style={outputStyle} class={outputClasses}>
+            <lightning-spinner lwc:if={spinner} alternative-text="Loading" size="medium"></lightning-spinner>
+            <div class="slds-scrollable_y" tabindex="0">                    
+                <template for:each={outputParagraphs} for:item="paragraph">
+                    <p key={paragraph} class="slds-p-bottom_small">{paragraph}</p>
+                </template>
+                <p lwc:if={error} class="slds-text-color_error">{error}</p>         
+            </div>        
         </div>
     </div>  
-    -->      
 </template>

@@ -8,7 +8,8 @@
     </targets>
     <targetConfigs>
         <targetConfig targets="analytics__Dashboard">
-            <hasStep>true</hasStep>            
+            <hasStep>true</hasStep>   
+            <property label="Two Column Layout" name="twoColumns" type="Boolean" default="false"/>
         </targetConfig>
     </targetConfigs>
 </LightningComponentBundle>
