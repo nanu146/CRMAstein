@@ -1,20 +1,21 @@
-<template>
-    <!--
-    <div class="slds-grid slds-wrap">
+<template>    
+    <div class="slds-grid slds-wrap" lwc:ref="main" style="height: 100%; width: 100%;">
         <div class="slds-col slds-size_1-of-1">
             <h1 class="slds-text-heading_large slds-p-around_medium">This is my heading</h1>
         </div>
         <div class="slds-col slds-size_1-of-1 slds-large-size_4-of-12">
             <p>{prompt}</p>
+            <p>{mainWidth}</p>
+            <p>{mainHeight}</p>
         </div>
         <div class="slds-col slds-size_1-of-1 slds-large-size_8-of-12 slds-grow-none">
             <template for:each={outputParagraphs} for:item="paragraph">
                 <p key={paragraph} class="slds-p-bottom_small">{paragraph}</p>
             </template>            
         </div>
-      </div>  
-      -->
+    </div>  
       
+<!--
     <div class="header">
         <h1>This is the heading</h1>
     </div>
@@ -49,4 +50,5 @@
             <p>Right column content. This content can also be longer and will be scrollable.</p>
         </div>
     </div>  
+    -->      
 </template>
