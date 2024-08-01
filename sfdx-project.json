@@ -5,7 +5,7 @@
       "default": true
     }
   ],
-  "name": "crma-summarize",
+  "name": "CRMAstein",
   "namespace": "",
   "sfdcLoginUrl": "https://login.salesforce.com",
   "sourceApiVersion": "61.0"
