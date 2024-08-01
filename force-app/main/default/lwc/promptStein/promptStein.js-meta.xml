@@ -2,7 +2,8 @@
 <LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
     <apiVersion>61.0</apiVersion>
     <isExposed>true</isExposed>
-    <masterLabel>Summarize Fields</masterLabel>
+    <masterLabel>Prompt Stein</masterLabel>
+    <description>Run a Prompt Template (built in Einstein Prompt Builder) on your selected Data</description>
     <targets>
         <target>analytics__Dashboard</target>        
     </targets>

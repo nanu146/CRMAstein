@@ -1,10 +1,10 @@
 import { LightningElement, api } from 'lwc';
 import LightningAlert from 'lightning/alert';
 
-import summarize from "@salesforce/apex/SummarizeFieldsCtrl.summarize";
+import summarize from "@salesforce/apex/LLMComponentCtrl.runPrompt";
 
 
-export default class SummarizeFields extends LightningElement {
+export default class PromptStein extends LightningElement {
     @api prompt_template;    
     @api title = "Text Analyzer";
     @api results;
@@ -38,7 +38,7 @@ export default class SummarizeFields extends LightningElement {
         this.output = "";
         this.selection_changed = false;
         try {            
-            let result = await summarize( {promptTemplate: this.prompt_template, data: JSON.stringify(this.results)} );
+            let result = await runPrompt( {promptTemplate: this.prompt_template, data: JSON.stringify(this.results)} );
             console.log(result);
             this.output = result;
             this.error = undefined;

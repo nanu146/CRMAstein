@@ -2,7 +2,7 @@ import { LightningElement, api } from 'lwc';
 import LightningAlert from 'lightning/alert';
 import generate from "@salesforce/apex/LLMComponentCtrl.generate";
 
-export default class AskData extends LightningElement {
+export default class AskStein extends LightningElement {
     @api title;
     @api results;
     @api setSelection;
@@ -30,7 +30,7 @@ export default class AskData extends LightningElement {
     // Layout and data getters
     // ----------------------------------------------------------------
     get heading() {        
-        return this.title ?? "Ask Data";
+        return this.title ?? "Ask Einstein";
     }
 
     get promptClasses() {        
