@@ -29,8 +29,8 @@ export default class AskData extends LightningElement {
     // ----------------------------------------------------------------
     // Layout and data getters
     // ----------------------------------------------------------------
-    get heading() {
-        return "Ask Data";
+    get heading() {        
+        return this.title ?? "Ask Data";
     }
 
     get promptClasses() {        
@@ -92,12 +92,11 @@ export default class AskData extends LightningElement {
     }
 
     generatePrompt() {
-        return `Answer the following question based on the data provided after the question in JSON format:
-${this.prompt}
-
-Data in JSON format:
-${JSON.stringify(this.results, null, 4)}
-`
+        return "Answer the following question based on the data provided " +
+            "after the question in JSON format:\n" +
+            this.prompt + 
+            "\n\nData in JSON format:\n" +
+            JSON.stringify(this.results, null, 4);
     }    
 
     async run() {
