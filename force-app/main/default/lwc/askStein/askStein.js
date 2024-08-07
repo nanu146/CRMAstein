@@ -8,7 +8,8 @@ export default class AskStein extends LightningElement {
     @api setSelection;
     @api selectMode;
     
-    @api model = "sfdc_ai__DefaultOpenAIGPT4_32k";
+    @api heading;
+    @api model;
     @api twoColumns;
     
     containerHeight;
@@ -29,9 +30,6 @@ export default class AskStein extends LightningElement {
     // ----------------------------------------------------------------
     // Layout and data getters
     // ----------------------------------------------------------------
-    get heading() {        
-        return this.title ?? "Ask Einstein";
-    }
 
     get promptClasses() {        
         return "slds-col slds-p-around_medium " + (this.twoColumns ? "slds-size_1-of-3" : "slds-size_1-of-1");

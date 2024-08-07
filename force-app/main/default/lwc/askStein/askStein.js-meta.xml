@@ -10,7 +10,9 @@
     <targetConfigs>
         <targetConfig targets="analytics__Dashboard">
             <hasStep>true</hasStep>   
+            <property label="Heading" name="heading" type="String" default="ask Stein"/>
             <property label="Two Column Layout" name="twoColumns" type="Boolean" default="false"/>
+            <property label="Model" name="model" type="String" default="sfdc_ai__DefaultOpenAIGPT4_32k"/>
         </targetConfig>
     </targetConfigs>
 </LightningComponentBundle>

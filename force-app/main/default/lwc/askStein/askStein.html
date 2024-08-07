@@ -4,9 +4,11 @@
             <div class="slds-clearfix">
                 <div class="slds-float_right slds-p-around_medium">
                     <lightning-button-group slot="actions">
-                        <lightning-button label="Show Data" onclick={showData}></lightning-button>
-                        <lightning-button label="Show Prompt" onclick={showPrompt}></lightning-button>
                         <lightning-button label="Run" onclick={run}></lightning-button>
+                        <lightning-button-menu alternative-text="more">
+                            <lightning-menu-item label="Show Data" onclick={showData}></lightning-menu-item>
+                            <lightning-menu-item label="Show Prompt" onclick={showPrompt}></lightning-menu-item>
+                        </lightning-button-menu>                                                
                     </lightning-button-group>
                 </div>       
                 <h1 class="slds-text-heading_large slds-p-around_medium">

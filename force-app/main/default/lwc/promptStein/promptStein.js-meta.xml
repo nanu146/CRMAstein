@@ -10,6 +10,7 @@
     <targetConfigs>
         <targetConfig targets="analytics__Dashboard">
             <hasStep>true</hasStep>
+            <property label="Heading" name="heading" type="String" default="prompt Stein"/>
             <property label="Prompt Template Name (API Name)" name="prompt_template" type="String" default="Summarize_Comments"/>
         </targetConfig>
     </targetConfigs>
