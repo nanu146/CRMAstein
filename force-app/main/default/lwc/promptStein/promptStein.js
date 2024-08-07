@@ -1,7 +1,7 @@
 import { LightningElement, api } from 'lwc';
 import LightningAlert from 'lightning/alert';
 
-import summarize from "@salesforce/apex/LLMComponentCtrl.runPrompt";
+import runPrompt from "@salesforce/apex/LLMComponentCtrl.runPrompt";
 
 
 export default class PromptStein extends LightningElement {
