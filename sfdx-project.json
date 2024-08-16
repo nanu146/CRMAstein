@@ -18,6 +18,7 @@
   "sfdcLoginUrl": "https://login.salesforce.com",
   "sourceApiVersion": "61.0",
   "packageAliases": {
-    "CRMAstein": "0HoWz00000001QjKAI"
+    "CRMAstein": "0HoWz00000001QjKAI",
+    "CRMAstein@0.1.0-1": "04tWz0000001wgHIAQ"
   }
 }
