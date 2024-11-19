@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+    <types>
+        <members>LLMComponentCtrl</members>
+        <members>LLMComponentCtrlTest</members>
+        <name>ApexClass</name>
+    </types>
+    <types>
+        <members>accountSummarizer</members>
+        <members>askStein</members>
+        <members>promptStein</members>
+        <name>LightningComponentBundle</name>
+    </types>
+    <version>62.0</version>
+</Package>

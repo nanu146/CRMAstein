@@ -1,0 +1,21 @@
+<template>    
+    <div class="slds-grid slds-wrap slds-grid_vertical-align-start" lwc:ref="main" style="height: 100%; width: 100%;">
+        <div class="slds-col slds-size_1-of-1" lwc:ref="heading">
+            <div class="slds-clearfix">    
+                <h1 class="slds-text-heading_medium slds-p-around_medium">
+                    <lightning-icon style="position:relative; top: -3px" size="small" icon-name="utility:einstein" alternative-text="Einstein" class="slds-p-right_small"></lightning-icon>
+                    {heading}          
+                </h1>
+            </div>
+        </div>
+        <div style={outputStyle} class={outputClasses}>
+            <lightning-spinner lwc:if={spinner} alternative-text="Loading" size="medium"></lightning-spinner>
+            <div class="slds-scrollable_y" tabindex="0">                    
+                <template for:each={outputParagraphs} for:item="paragraph">
+                    <p key={paragraph} class="slds-p-bottom_small">{paragraph}</p>
+                </template>
+                <p lwc:if={error} class="slds-text-color_error">{error}</p>         
+            </div>        
+        </div>
+    </div>  
+</template>
