@@ -10,7 +10,7 @@
     <targetConfigs>
         <targetConfig targets="analytics__Dashboard">
             <hasStep>true</hasStep>   
-            <property label="Heading" name="heading" type="String" default="ask Stein"/>
+            <property label="Heading" name="heading" type="String" default="Summary"/>
             <property label="Default Prompt" name="defaultPrompt" type="String" default="Summarize the following in an easy to understand manner"/>
             <property label="Two Column Layout" name="twoColumns" type="Boolean" default="false"/>
             <property label="Model" name="model" type="String" default="sfdc_ai__DefaultOpenAIGPT4_32k"/>
