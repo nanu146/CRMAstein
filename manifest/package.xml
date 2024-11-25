@@ -7,9 +7,7 @@
     </types>
     <types>
         <members>accountSummarizer</members>
-        <members>askStein</members>
-        <members>promptStein</members>
         <name>LightningComponentBundle</name>
     </types>
-    <version>62.0</version>
+    <version>58.0</version>
 </Package>
